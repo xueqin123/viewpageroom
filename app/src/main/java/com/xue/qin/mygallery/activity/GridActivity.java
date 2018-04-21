@@ -13,6 +13,7 @@ import android.support.v7.widget.RecyclerView;
 import com.xue.qin.mygallery.R;
 import com.xue.qin.mygallery.Utils.SystemUitls;
 import com.xue.qin.mygallery.adapter.GridAdapter;
+import com.xue.qin.mygallery.adapter.UnlimitedAdapter;
 import com.xue.qin.mygallery.interfaces.OnItemClickListener;
 
 import java.io.File;
@@ -67,7 +68,17 @@ public class GridActivity extends Activity implements OnItemClickListener {
 
     @Override
     public void onItemClick(int position) {
+        starUnLimitedPagerActivity(position);
+    }
+    private void starNormalPagerActivity(int position){
         Intent intent = new Intent(this,PagerActivity.class);
+        intent.putExtra(CURRENT,position);
+        intent.putStringArrayListExtra(DATA,mData);
+        startActivity(intent);
+    }
+
+    private void starUnLimitedPagerActivity(int position){
+        Intent intent = new Intent(this,UnlimitedActivity.class);
         intent.putExtra(CURRENT,position);
         intent.putStringArrayListExtra(DATA,mData);
         startActivity(intent);

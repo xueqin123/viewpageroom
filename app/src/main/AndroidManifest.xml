@@ -23,6 +23,8 @@
             android:name=".activity.PagerActivity"
             android:screenOrientation="portrait">
         </activity>
+        <activity android:name=".activity.UnlimitedActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

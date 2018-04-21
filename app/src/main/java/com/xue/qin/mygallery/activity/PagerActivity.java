@@ -7,6 +7,8 @@ import android.support.v4.view.ViewPager;
 
 import com.xue.qin.mygallery.R;
 import com.xue.qin.mygallery.adapter.PagerAdapter;
+import com.xue.qin.mygallery.adapter.UnlimitedAdapter;
+import com.xue.qin.mygallery.views.UnlimitedViewPager;
 
 import java.util.ArrayList;
 
