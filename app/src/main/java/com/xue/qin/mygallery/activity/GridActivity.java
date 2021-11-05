@@ -6,14 +6,15 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
+
+
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.xue.qin.mygallery.R;
 import com.xue.qin.mygallery.Utils.SystemUitls;
 import com.xue.qin.mygallery.adapter.GridAdapter;
-import com.xue.qin.mygallery.adapter.UnlimitedAdapter;
 import com.xue.qin.mygallery.interfaces.OnItemClickListener;
 
 import java.io.File;

@@ -2,13 +2,13 @@ package com.xue.qin.mygallery.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.view.ViewPager;
+
+
+import androidx.annotation.Nullable;
+import androidx.viewpager.widget.ViewPager;
 
 import com.xue.qin.mygallery.R;
-import com.xue.qin.mygallery.adapter.PagerAdapter;
-import com.xue.qin.mygallery.adapter.UnlimitedAdapter;
-import com.xue.qin.mygallery.views.UnlimitedViewPager;
+import com.xue.qin.mygallery.adapter.MyPagerAdapter;
 
 import java.util.ArrayList;
 
@@ -19,7 +19,7 @@ import java.util.ArrayList;
 public class PagerActivity extends Activity {
     private ArrayList<String> mData = new ArrayList<>();
     private ViewPager mViewPager;
-    private PagerAdapter mAdapter;
+    private MyPagerAdapter mAdapter;
     private int mCurrent;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -28,7 +28,7 @@ public class PagerActivity extends Activity {
         mData = getIntent().getStringArrayListExtra(GridActivity.DATA);
         mCurrent = getIntent().getIntExtra(GridActivity.CURRENT,0);
         mViewPager = (ViewPager) findViewById(R.id.viewPager);
-        mAdapter = new PagerAdapter(this,mData);
+        mAdapter = new MyPagerAdapter(this,mData);
         mViewPager.setAdapter(mAdapter);
         mViewPager.setCurrentItem(mCurrent);
     }

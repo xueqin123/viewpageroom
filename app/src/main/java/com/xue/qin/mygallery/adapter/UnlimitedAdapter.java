@@ -6,8 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import androidx.viewpager.widget.PagerAdapter;
+
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.xue.qin.mygallery.R;
 import com.xue.qin.mygallery.interfaces.DataProvider;
 import com.xue.qin.mygallery.views.UnlimitedViewPager;
@@ -18,7 +19,7 @@ import java.util.ArrayList;
  * Created by xue.qin on 2018/4/21.
  */
 
-public class UnlimitedAdapter extends android.support.v4.view.PagerAdapter {
+public class UnlimitedAdapter extends PagerAdapter {
     private static final int MAX_CAPACITY = 10000;
     private Context mContext;
     private String[] mData = new String[MAX_CAPACITY];
@@ -29,7 +30,9 @@ public class UnlimitedAdapter extends android.support.v4.view.PagerAdapter {
     private int rightCursor = MAX_CAPACITY / 2 + 1;
     private DataProvider mDataProvider;
 
-    public UnlimitedAdapter(Context context, UnlimitedViewPager viewPager, String initUri, DataProvider dataProvider) {
+
+    public UnlimitedAdapter(Context context, UnlimitedViewPager viewPager,
+                            String initUri, DataProvider dataProvider) {
         mContext = context;
         mInflater = LayoutInflater.from(mContext);
         mDataProvider = dataProvider;
@@ -65,7 +68,6 @@ public class UnlimitedAdapter extends android.support.v4.view.PagerAdapter {
             ImageView imageView = (ImageView) view.findViewById(R.id.imageView);
             Glide.with(mContext)
                     .load(mData[position])
-                    .diskCacheStrategy(DiskCacheStrategy.SOURCE)
                     .into(imageView);
             container.addView(view);
             return view;

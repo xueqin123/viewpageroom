@@ -6,8 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import androidx.viewpager.widget.PagerAdapter;
+
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.xue.qin.mygallery.R;
 
 import java.util.List;
@@ -16,12 +17,12 @@ import java.util.List;
  * Created by xue.qin on 2018/4/21.
  */
 
-public class PagerAdapter extends android.support.v4.view.PagerAdapter {
+public class MyPagerAdapter extends PagerAdapter {
     private Context mContext;
     private List<String> mData;
     private LayoutInflater mInflater;
 
-    public PagerAdapter(Context context, List<String> data) {
+    public MyPagerAdapter(Context context, List<String> data) {
         mContext = context;
         mData = data;
         mInflater = LayoutInflater.from(mContext);
@@ -43,7 +44,6 @@ public class PagerAdapter extends android.support.v4.view.PagerAdapter {
         ImageView imageView = (ImageView) view.findViewById(R.id.imageView);
         Glide.with(mContext)
                 .load(mData.get(position))
-                .diskCacheStrategy(DiskCacheStrategy.SOURCE)
                 .into(imageView);
         container.addView(view);
         return view;

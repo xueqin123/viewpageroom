@@ -1,12 +1,12 @@
 package com.xue.qin.mygallery.adapter;
 
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.Priority;
@@ -49,8 +49,7 @@ public class GridAdapter extends RecyclerView.Adapter<GridItemViewHolder> implem
         holder.itemView.setOnClickListener(this);
         ImageView imageView = holder.imageView;
         Glide.with(mContext)
-                .load(mData.get(position)).priority(Priority.LOW)
-                .diskCacheStrategy(DiskCacheStrategy.SOURCE)
+                .load(mData.get(position))
                 .into(imageView);
     }
 

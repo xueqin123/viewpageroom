@@ -1,8 +1,10 @@
 package com.xue.qin.mygallery.viewHolder;
 
-import android.support.v7.widget.RecyclerView;
+
 import android.view.View;
 import android.widget.ImageView;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by xue.qin on 2018/4/21.
